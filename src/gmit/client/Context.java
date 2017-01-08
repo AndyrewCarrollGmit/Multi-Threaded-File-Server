@@ -3,7 +3,7 @@
  *
  */
 package gmit.client;
-
+//https://learnonline.gmit.ie/course/view.php?id=2346 -- Material on Moodle used to help with project
 // A context represents the entire scope of an application, i.e.
 public class Context {
 	// xml file location

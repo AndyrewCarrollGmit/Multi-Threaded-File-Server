@@ -2,6 +2,7 @@
  * @author Andy
  *
  */
+// https://learnonline.gmit.ie/course/view.php?id=2346 -- Material on Moodle used to help with project
 package gmit.client;
 
 import java.io.*; //We need the Java IO library to read from the socket's input stream and write to its output stream
