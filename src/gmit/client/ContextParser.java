@@ -1,8 +1,13 @@
+/**
+ * @author Andy
+ *
+ */
 package gmit.client;
 
 
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
+
 
 public class ContextParser {
 	private Context ctx;
@@ -12,31 +17,22 @@ public class ContextParser {
 		this.ctx = ctx;
 	}
 	
-	//get set ctx
-	public Context getCtx() {
-		return ctx;
-	}
+	
 
-	public void setCtx(Context ctx) {
-		this.ctx = ctx;
-	}
-
-	// method to parse an XML file into a DOM tree
+	// Method from XML example 
 	public void init() throws Throwable{
-		//get the factory
+		
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance(); 
-		//get a new instance 
+		
 		DocumentBuilder db = dbf.newDocumentBuilder();
-		//parse the file 
+		//parse
 		Document doc = db.parse(Context.CONF_FILE);
 		
-		// returns the root element 
+		//Get the root of the node tree
 		Element root = doc.getDocumentElement();
-		// gets childs node
+		 //Get the child node of the root
 		NodeList children = root.getChildNodes();
-		
-		
-		//find the elements
+		//Get the attributes as a map
 		NamedNodeMap atts = root.getAttributes();
 		
 		for(int j=0;j<atts.getLength();j++)
@@ -46,9 +42,11 @@ public class ContextParser {
 			}
 		}//end for
 		
+		//find the elements
 		for(int i=0;i<children.getLength();i++){
 			Node next = children.item(i);
 			
+			//Check if it is an element node
 			if(next instanceof Element){
 				Element e = (Element)next;
 				
@@ -65,5 +63,11 @@ public class ContextParser {
 			}	//end if 
 		} //end for 
 	}// init 
+	public Context getCtx() {
+		return ctx;
+	}
 
+	public void setCtx(Context ctx) {
+		this.ctx = ctx;
+	}
 }// end ContextParser

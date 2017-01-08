@@ -1,19 +1,20 @@
-package gmit.client;
-/* A context represents the entire scope of an application, i.e.
- * we can assign "global variables" to a context.
- * 
- * This is a "bean class", containing a constructor and accessor
- * methods only.
+/**
+ * @author Andy
+ *
  */
+package gmit.client;
+
+// A context represents the entire scope of an application, i.e.
 public class Context {
+	// xml file location
 	public static final String CONF_FILE="src/conf.xml";
+	// private variables
 	private String username;
 	private String serverHost;
 	private String serverPort;
 	private String download_dir;
 	
-	
-	
+	// Getters and Setters
 	public String getUsername() {
 		return username;
 	}
@@ -61,7 +62,7 @@ public class Context {
 	}
 
 
-
+	// OverRideMethod
 	@Override
 	public String toString() {
 		return "Context [username=" + username + ", serverHost=" + serverHost + ", serverPort=" + serverPort + ", download_dir=" + download_dir + "]";
